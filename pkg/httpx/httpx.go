@@ -47,7 +47,9 @@ func Error(w http.ResponseWriter, status, code int, message string) {
 func BadRequest(w http.ResponseWriter, message string) { Error(w, http.StatusBadRequest, 400, message) }
 
 // Unauthorized 输出 401 响应。
-func Unauthorized(w http.ResponseWriter, message string) { Error(w, http.StatusUnauthorized, 401, message) }
+func Unauthorized(w http.ResponseWriter, message string) {
+	Error(w, http.StatusUnauthorized, 401, message)
+}
 
 // Forbidden 输出 403 响应。
 func Forbidden(w http.ResponseWriter, message string) { Error(w, http.StatusForbidden, 403, message) }
@@ -59,7 +61,9 @@ func NotFound(w http.ResponseWriter, message string) { Error(w, http.StatusNotFo
 func Conflict(w http.ResponseWriter, message string) { Error(w, http.StatusConflict, 409, message) }
 
 // InternalError 输出 500 响应。
-func InternalError(w http.ResponseWriter, message string) { Error(w, http.StatusInternalServerError, 500, message) }
+func InternalError(w http.ResponseWriter, message string) {
+	Error(w, http.StatusInternalServerError, 500, message)
+}
 
 // Decode 解析 JSON 请求体，限制 1MB，且只允许单个 JSON 对象。
 func Decode(r *http.Request, dst interface{}) error {
