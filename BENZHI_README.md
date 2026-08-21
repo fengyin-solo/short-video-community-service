@@ -1,4 +1,4 @@
-# short-video-community-service
+# short-video-community-service__013
 
 ## 构建镜像
 
@@ -18,7 +18,7 @@ go test ./...      # 测试（如有）
 
 ## 环境
 
-- 基础镜像: golang:1.22
+- 基础镜像: golang:1.26
 - Go 模块目录: `.`
 - 依赖已在镜像构建阶段预下载，容器内离线可用。
 - 容器内工作目录: `/app`
